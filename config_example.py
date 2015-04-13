@@ -1,7 +1,10 @@
+import os
+
+
 github = dict(
-    client_id = '',
-    client_secret = '',
-    access_token = '',
+    client_id = os.environ.get('GITHUB_CLIENT_ID', ''),
+    client_secret = os.environ.get('GITHUB_CLIENT_SECRET', ''),
+    access_token = os.environ.get('GITHUB_SECRET_TOKEN', ''),
     base_url = 'https://api.github.com'
 )
 
