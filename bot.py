@@ -176,6 +176,7 @@ def main():
             logger.info('Processing file: %s' % repo_file['name'])
 
             if file_is_license(repo_file):
+                found_license = False
                 # Has a license, log in db and skip
                 row = table.insert(dict(repo_id=repo['id'],
                                         repo_name=repo['name'],
@@ -184,7 +185,12 @@ def main():
                                         license_file=repo_file['name'],
                                         raw_repo_dump=json.dumps(repo)))
                 logger.info('Is a license file. Saved in db, row=%s' % str(row))
+                found_license = False
                 break
+
+        # License file found, skip to next file
+        if found_license:
+            continue
 
         # No explicit license file, check if readme has license info
         readme_content_obj = get_readme_content(repo_contents)

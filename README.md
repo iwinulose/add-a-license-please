@@ -20,7 +20,7 @@ All repositories that are processed (skipped or issue created) are saved in a sq
 
 ### Where is this bot running?
 
-Currently I'm running this bot on a 1GB [DigitalOcean](https://www.digitalocean.com/?refcode=422889a8186d) instance (yes, that's an affiliate link. Use that to get free VPS for 2 months). The bot is low of resources and uses a couple MB of RAM.
+Currently I'm running this bot on a 1GB [DigitalOcean](https://www.digitalocean.com/?refcode=422889a8186d) instance (yes, that's an affiliate link. Use that to get free VPS for 2 months). The bot is low of resources and uses a couple dozen MB of RAM.
 
 ### Running
 
