@@ -185,7 +185,7 @@ def main():
                                         license_file=repo_file['name'],
                                         raw_repo_dump=json.dumps(repo)))
                 logger.info('Is a license file. Saved in db, row=%s' % str(row))
-                found_license = False
+                found_license = True
                 break
 
         # License file found, skip to next file
