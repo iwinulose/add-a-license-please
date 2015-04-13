@@ -10,7 +10,10 @@ import dataset
 import requests
 
 # Custom imports
-import config
+try:
+    import config
+except:
+    import config_example as config
 
 
 # Bot constants
