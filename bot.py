@@ -16,6 +16,14 @@ import config
 # Bot constants
 SEARCH_PARAMS = {'q': 'stars:"<5 AND >1"', 'sort': 'updated'}
 
+# Name qualifiers for license files
+LICENSE_FILE_NAMES = [
+    'license',
+    'epl-',
+    'cpl-',
+    'copying'
+]
+
 
 # Gloabl variable init
 db = None
@@ -96,7 +104,10 @@ def file_is_license(contents_obj):
         contents_obj: One dict as returned from repo content
     '''
     file_name = contents_obj['name'].lower()
-    return True if file_name.startswith('license') else False
+    for valid_name in LICENSE_FILE_NAMES:
+        if file_name.startswith(valid_name):
+            return True
+    return False
 
 
 def readme_has_license(readme_obj):

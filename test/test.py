@@ -23,6 +23,40 @@ license_obj = {
     }
 }
 
+license_obj2 = {
+    "name": "epl-v10.html",
+    "path": "epl-v10.html",
+    "sha": "378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+    "size": 1078,
+    "url": "https://api.github.com/repos/karan/Projects/contents/LICENSE.md?ref=master",
+    "html_url": "https://github.com/karan/Projects/blob/master/LICENSE.md",
+    "git_url": "https://api.github.com/repos/karan/Projects/git/blobs/378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+    "download_url": "https://raw.githubusercontent.com/karan/Projects/master/LICENSE.md",
+    "type": "file",
+    "_links": {
+        "self": "https://api.github.com/repos/karan/Projects/contents/LICENSE.md?ref=master",
+        "git": "https://api.github.com/repos/karan/Projects/git/blobs/378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+        "html": "https://github.com/karan/Projects/blob/master/LICENSE.md"
+    }
+}
+
+license_obj3 = {
+    "name": "COPYING",
+    "path": "COPYING",
+    "sha": "378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+    "size": 1078,
+    "url": "https://api.github.com/repos/karan/Projects/contents/LICENSE.md?ref=master",
+    "html_url": "https://github.com/karan/Projects/blob/master/LICENSE.md",
+    "git_url": "https://api.github.com/repos/karan/Projects/git/blobs/378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+    "download_url": "https://raw.githubusercontent.com/karan/Projects/master/LICENSE.md",
+    "type": "file",
+    "_links": {
+        "self": "https://api.github.com/repos/karan/Projects/contents/LICENSE.md?ref=master",
+        "git": "https://api.github.com/repos/karan/Projects/git/blobs/378233073e1bcc9e6b1ee8d7ec25c198760a897d",
+        "html": "https://github.com/karan/Projects/blob/master/LICENSE.md"
+    }
+}
+
 not_license_obj = {
     "name": "NOT_LICENSE.md",
     "path": "NOT_LICENSE.md",
@@ -79,6 +113,8 @@ class TestBotMethods(unittest.TestCase):
 
     def test_file_is_license(self):
         self.assertTrue(bot.file_is_license(license_obj))
+        self.assertTrue(bot.file_is_license(license_obj2))
+        self.assertTrue(bot.file_is_license(license_obj3))
         self.assertFalse(bot.file_is_license(not_license_obj))
 
 
