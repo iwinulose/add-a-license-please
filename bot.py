@@ -171,12 +171,12 @@ def main():
 
         logger.debug('Repo contents: %s' % repo_contents)
 
+        found_license = False
         # Check to see if there's a license file in the repo
         for repo_file in repo_contents:
             logger.info('Processing file: %s' % repo_file['name'])
 
             if file_is_license(repo_file):
-                found_license = False
                 # Has a license, log in db and skip
                 row = table.insert(dict(repo_id=repo['id'],
                                         repo_name=repo['name'],
