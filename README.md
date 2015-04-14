@@ -4,7 +4,7 @@ A bot that crawls Github for projects without any license, and asks the owner to
 
 ![](https://raw.githubusercontent.com/karan/add-a-license-please/master/logo.jpg)
 
-Github is full of "open source" project that carry no explicit license. This bot will create an issue in repositories that are missing a license.
+Github is full of "open source" projects that carry no explicit license. This bot will create an issue in repositories that are missing a license.
 
 ### Why include a license?
 
@@ -14,13 +14,13 @@ Source: https://help.github.com/articles/open-source-licensing/
 
 ### How does it work?
 
-The bot searches Github for repositories that have some stars (although the star restriction is a bit wonky). For the returned repos, it will check to see existence of any license information. If it's missing, it will create an issue in the repo. Simple!
+The bot searches Github for repositories that have some stars (although the star restriction is a bit wonky). For the returned repos, it will check to see if any license information exists. If it's missing, it will create an issue in the repo. Simple!
 
 All repositories that are processed (skipped or issue created) are saved in a sqlite3 database. This is done to prevent double scanning the same repository.
 
 ### Where is this bot running?
 
-Currently I'm running this bot on a 1GB [DigitalOcean](https://www.digitalocean.com/?refcode=422889a8186d) instance (yes, that's an affiliate link. Use that to get free VPS for 2 months). The bot is low of resources and uses a couple dozen MB of RAM.
+Currently I'm running this bot on a 1GB [DigitalOcean](https://www.digitalocean.com/?refcode=422889a8186d) instance (yes, that's an affiliate link. Use that to get a free VPS for 2 months). The bot is not resource-intensive and uses a couple dozen MBs of RAM.
 
 ### Running
 
@@ -46,7 +46,7 @@ $ pip install -r requirements.txt
 $ python bot.py
 ```
 
-This only runs the bot once, meaning only one search. To make it look (think `while True: search and stuff`), you need to write your own wrapper. I'm not including mine to prevent misuse of Github's API.
+This only runs the bot once, meaning only one search. To make it loop (think `while True: search and stuff`), you need to write your own wrapper. I'm not including mine to prevent misuse of Github's API.
 
 ### Testing
 
